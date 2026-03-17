@@ -6,7 +6,7 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
-        MyApp
+        ArcticLedger
       </div>
 
       <nav className="sidebar-nav">
