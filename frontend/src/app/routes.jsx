@@ -5,6 +5,7 @@ import Dashboard from "../features/dashboard/DashboardPage";
 import Profile from "../features/profile/ProfilePage";
 import Settings from "../features/settings/SettingsPage";
 import Analytics from "../features/analytics/AnalyticsPage";
+import Data from "../features/data/Data"
 
 export default function AppRoutes() {
     return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
 
             <Route element={<MainLayout />}>
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/data" element={<Data />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/analytics" element={<Analytics />} />
