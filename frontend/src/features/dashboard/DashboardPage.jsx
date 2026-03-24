@@ -8,10 +8,10 @@ export default function Dashboard() {
         <h1>Dashboard</h1>
       </div>
       <div className="upper-content">
-        <Card title='Overview' />
-        <Card title='Overview' />
-        <Card title='Overview' />
-        <Card title='Overview' />
+        <Card title='View Data' path='/data' />
+        <Card title='Add Data' path='/data' />
+        <Card title='Update Data' path='/data' />
+        <Card title='Analyse Data ' path='/data' />
       </div>
     </div>
   )

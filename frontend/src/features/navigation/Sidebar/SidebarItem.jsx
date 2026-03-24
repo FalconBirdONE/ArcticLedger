@@ -1,15 +1,14 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function SidebarItem({ item }) {
+export default function SidebarItem({ item, isActive, onClick, onMouseEnter }) {
   return (
-    <NavLink
+    <Link
       to={item.path}
-      className={({ isActive }) =>
-        isActive ? "sidebar-item active" : "sidebar-item"
-      }
+      className={`sidebar-item ${isActive ? "active" : ""}`}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
     >
-      <span className="sidebar-icon">{item.icon}</span>
-      <span className="sidebar-label">{item.label}</span>
-    </NavLink>
+      {item.label}
+    </Link>
   );
 }

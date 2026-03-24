@@ -2,7 +2,7 @@
   font-family: 'Inter', sans-serif;
   width: 240px;
   height: 100vh;
-  background: #111827;
+  background: #202020;
   color: white;
   display: flex;
   flex-direction: column;
@@ -17,27 +17,51 @@
 }
 
 .sidebar-nav {
+  position: relative;
+  /* Anchor for the absolute indicator */
   display: flex;
   flex-direction: column;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.sidebar-indicator {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+
+  /* animation logic */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  /* Let clicks pass through to the items */
 }
 
 .sidebar-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
   text-decoration: none;
-  color: #d1d5db;
-  transition: background 0.2s;
+  height: 40px;
+  margin-bottom: 4px;
+  /* Combined with height, this is your ITEM_HEIGHT */
+  display: flex;
+  margin-bottom: 0;
+  align-items: center;
+  padding: 0 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  /* Keep text above the indicator */
+  color: #999;
+  transition: color 0.3s ease;
 }
 
-.sidebar-item:hover {
-  background: #003273;
-}
 
-.sidebar-item.active {
-  background: #859fc1e0;
-  color: rgb(19, 19, 19);
+.sidebar-indicator.is-hovering {
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar-icon {
@@ -46,4 +70,9 @@
 
 .sidebar-label {
   font-size: 15px;
+}
+
+.sidebar-item:hover {
+  color: #ffffff !important;
+  text-decoration: none;
 }

@@ -3,11 +3,13 @@
     font-size: 28px;
     font-weight: 700;
     margin: 0 0 10px 10px;
+    margin-top: -45px;
+
 }
 
 .upper-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    gap: 18px;
     margin-top: 20px;
 }
