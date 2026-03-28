@@ -1,30 +1,28 @@
+import "./baseTable.css";
+
 function BaseTable({ data, columns }) {
-    if (!data || data.length === 0) {
-        return <p>No data available</p>;
-    }
-
     return (
-        <table>
-            <thead>
-                <tr>
-                    {columns.map(col => (
-                        <th key={col.key}>{col.header}</th>
-                    ))}
-                </tr>
-            </thead>
-
-            <tbody>
-                {data.map((row, rowIndex) => (
-                    <tr key={rowIndex}>
-                        {columns.map(col => (
-                            <td key={col.key}>
-                                {row[col.key]}
-                            </td>
+        <div className="table-wrapper">
+            <table className="data-table">
+                <thead>
+                    <tr>
+                        {columns.map((col) => (
+                            <th key={col.key}>{col.header}</th>
                         ))}
                     </tr>
-                ))}
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    {data.map((row, rowIndex) => (
+                        <tr key={rowIndex}>
+                            {columns.map((col) => (
+                                <td key={col.key}>{row[col.key]}</td>
+                            ))}
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
