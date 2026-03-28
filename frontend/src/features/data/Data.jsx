@@ -1,5 +1,5 @@
+import DataPage from "./Pages/DataPage";
+
 export default function Data() {
-    return (
-        <h1>data tab</h1>
-    )
+    return <DataPage />;
 }
