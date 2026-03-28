@@ -1,16 +1,38 @@
 .tabs {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
-    gap: 20px;
-    border-bottom: 1px solid #333;
+    gap: 6px;
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 35px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+    z-index: 1000;
+
+    min-width: 340px;
+    justify-content: center;
 }
 
 .tabs button {
-    background: none;
     border: none;
+    background: transparent;
     color: white;
-    padding: 10px;
-    position: relative;
+    padding: 14px 28px;
+    border-radius: 16px;
     cursor: pointer;
+
+    transition: all 0.3s ease;
 }
 
 .tabs button::after {
@@ -24,6 +46,29 @@
     transition: width 0.3s;
 }
 
-.tabs button:hover::after {
-    width: 100%;
+.tabs button:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.tabs button.active {
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.fade-slide {
+    animation: fadeSlide 0.3s ease;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

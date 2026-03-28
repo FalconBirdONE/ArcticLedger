@@ -1,7 +1,9 @@
 import { useState } from "react";
+import "./DataPage.css";
 
 // TODO: Replace these stubs with actual imported components
 import BaseTable from "../components/table/baseTable";
+
 
 function SalesTable({ data }) {
     const columns = [
@@ -36,22 +38,54 @@ function OrdersTable() {
 export default function DataPage() {
     const [activeTab, setActiveTab] = useState("sales");
     const mockData = [
-        { id: 1, name: "Alice", amount: 500 },
-        { id: 2, name: "Bob", amount: 300 }
+        {
+            month: "March",
+            location: "Mumbai",
+            invoiceNo: "INV001",
+            invoiceDate: "28-03-2026",
+            customerName: "ABC Traders",
+            vendorNo: "V001",
+            quantity: 10,
+            price: 5000,
+            cash: 2000,
+            gpay: 1000,
+            cheque: 1000,
+            chequeDtd: "30-03-2026",
+            chequeDetails: "HDFC 1234",
+            credit: 1000,
+            damage: 0
+        }
     ];
-
     return (
         <div>
             <h1>DATA PAGE LOADED</h1>
+
             {/* Tabs */}
             <div className="tabs">
-                <button onClick={() => setActiveTab("sales")}>Sales</button>
-                <button onClick={() => setActiveTab("users")}>Users</button>
-                <button onClick={() => setActiveTab("orders")}>Orders</button>
+                <button
+                    className={activeTab === "sales" ? "active" : ""}
+                    onClick={() => setActiveTab("sales")}
+                >
+                    Sales
+                </button>
+
+                <button
+                    className={activeTab === "users" ? "active" : ""}
+                    onClick={() => setActiveTab("users")}
+                >
+                    Users
+                </button>
+
+                <button
+                    className={activeTab === "orders" ? "active" : ""}
+                    onClick={() => setActiveTab("orders")}
+                >
+                    Orders
+                </button>
             </div>
 
             {/* Table */}
-            <div className="table-container">
+            <div className="table-container fade-slide">
                 {activeTab === "sales" && <SalesTable data={mockData} />}
                 {activeTab === "users" && <UsersTable />}
                 {activeTab === "orders" && <OrdersTable />}
