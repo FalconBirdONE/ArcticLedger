@@ -58,7 +58,6 @@ export default function DataPage() {
     ];
     return (
         <div>
-            <h1>DATA PAGE LOADED</h1>
 
             {/* Tabs */}
             <div className="tabs">
