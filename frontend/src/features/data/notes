@@ -1,0 +1,11 @@
+Total Original Tables: 
+1. Sales 
+2. Attendance 
+3. Inventory
+
+
+Derrived Tables: 
+1. Shopwise Credit: Sales
+2. Locationwise Credit: Sales
+3. Areawsie Order: Sales
+4. Pending Bills: Sales

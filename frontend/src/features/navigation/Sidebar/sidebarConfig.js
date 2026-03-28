@@ -2,21 +2,21 @@ export const sidebarItems = [
   {
     label: "Dashboard",
     path: "/dashboard",
-    icon: "🏠"
+    icon: ""
   },
   {
     label: "Profile",
     path: "/profile",
-    icon: "👤"
+    icon: ""
   },
   {
     label: "Settings",
     path: "/settings",
-    icon: "⚙️"
+    icon: ""
   },
   {
     label: "Analytics",
     path: "/analytics",
-    icon: "📊"
+    icon: ""
   }
 ];
